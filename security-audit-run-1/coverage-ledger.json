@@ -1,6 +1,0 @@
-[
-  {"unit": "auth", "status": "planned", "description": "Credential loading and usage"},
-  {"unit": "input", "status": "planned", "description": "Input validation and sanitization"},
-  {"unit": "llm", "status": "planned", "description": "LLM interaction and prompt security"},
-  {"unit": "parse", "status": "planned", "description": "JSON schema and model parsing"}
-]
