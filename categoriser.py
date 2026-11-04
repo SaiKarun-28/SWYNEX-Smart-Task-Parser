@@ -69,12 +69,12 @@ FEW_SHOTS = [
 ]
 
 
+MAX_INPUT_LENGTH = 1000
+
 def build_messages(task: str) -> list[dict]:
-    """Assemble the full message list sent to the model, in Gemini's
+    """Assemble the few-shots and current user task, in Gemini's
     Content shape (role + parts)."""
-    return [{"role": "user", "parts": [{"text": SYSTEM_PROMPT}]},
-            *FEW_SHOTS,
-            {"role": "user", "parts": [{"text": task}]}]
+    return [*FEW_SHOTS, {"role": "user", "parts": [{"text": task}]}]
 
 
 def _normalise_schema(schema: Any) -> Any:
@@ -112,6 +112,8 @@ def categorise(task: str, provider: str = "gemini", dry_run: bool = False) -> Ta
     """Parse a natural-language task into a validated Task object."""
     if not task or not task.strip():
         raise RuntimeError("task input is empty")
+    if len(task) > MAX_INPUT_LENGTH:
+        raise RuntimeError(f"task input too long (max {MAX_INPUT_LENGTH} characters)")
 
     messages = build_messages(task)
 
@@ -125,6 +127,7 @@ def categorise(task: str, provider: str = "gemini", dry_run: bool = False) -> Ta
 
     schema = _normalise_schema(Task.model_json_schema())
     config = types.GenerateContentConfig(
+        system_instruction=SYSTEM_PROMPT,
         temperature=0,
         response_mime_type="application/json",
         response_schema=schema,

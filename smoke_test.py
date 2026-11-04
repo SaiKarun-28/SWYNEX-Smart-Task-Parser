@@ -52,7 +52,7 @@ for bad in [
 messages = build_messages("Buy milk before Thursday")
 _check(messages[0]["role"] == "user", "first message must be the system instruction")
 _check(messages[-1]["role"] == "user", "last message must be the user task")
-_check(len(messages) == 2 + len(FEW_SHOTS),
+_check(len(messages) == 1 + len(FEW_SHOTS),
        "few-shot count must be preserved")
 schema = Task.model_json_schema()
 for prop in ("task_description", "category", "priority", "deadline",

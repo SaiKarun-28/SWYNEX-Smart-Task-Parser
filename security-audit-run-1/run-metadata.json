@@ -1,0 +1,11 @@
+{
+  "run_id": "run-1",
+  "repo": "SWYNEX-Smart-Task-Parser",
+  "target": "D:\\SWYNEX-Internship\\smart-todo-categoriser",
+  "source_ref": "HEAD",
+  "profile": "standard",
+  "scope_paths": ["."],
+  "budget": null,
+  "execution_policy": "sandboxed-source-and-local-only",
+  "run_status": "in_progress"
+}
