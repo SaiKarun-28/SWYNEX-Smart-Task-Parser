@@ -26,7 +26,7 @@ The Smart Task Parser is a prototype designed to reduce the friction of manual d
 Ensure you have Python 3.12 or higher installed. Clone the repository and install the required dependencies.
 
 ```bash
-git clone https://github.com/yourusername/SWYNEX-Smart-Task-Parser.git
+git clone https://github.com/SaiKarun-28/SWYNEX-Smart-Task-Parser.git
 cd SWYNEX-Smart-Task-Parser
 pip install -r requirements.txt
 ```
