@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <title>SWYNEX Smart Task Parser</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    :root { --bg: #24162b; --panel: #34203d; --line: #60456b; --warm: #f6f1e8; --muted: #c4b5ca; --amber: #f6c453; --green: #67e8a5; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--warm); font-family: Arial, sans-serif; }
+    #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--bg); }
+    .clip { position: absolute; inset: 0; overflow: hidden; }
+    .grain { position: absolute; inset: 0; opacity: .08; background-image: radial-gradient(#fff 0.7px, transparent .7px); background-size: 7px 7px; }
+    .orb { position: absolute; width: 720px; height: 720px; border-radius: 50%; right: -180px; top: -240px; background: #5b274f; filter: blur(50px); opacity: .38; }
+    .header { position: absolute; left: 110px; top: 72px; letter-spacing: 3px; font-size: 20px; color: var(--muted); font-weight: 700; }
+    .header span { color: var(--green); }
+    .kicker { position: absolute; left: 110px; top: 190px; color: var(--amber); font: 700 22px ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 4px; }
+    .hero { position: absolute; left: 110px; top: 258px; font-size: 108px; line-height: .98; font-weight: 800; letter-spacing: -4px; max-width: 880px; }
+    .hero em { color: var(--green); font-style: normal; }
+    .sub { position: absolute; left: 116px; top: 520px; color: var(--muted); font: 25px ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .terminal { position: absolute; left: 1120px; top: 180px; width: 680px; height: 530px; background: rgba(23,35,45,.94); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 22px 70px rgba(0,0,0,.25); padding: 30px; font: 22px/1.6 ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .termbar { color: var(--muted); font-size: 18px; letter-spacing: 2px; border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+    .prompt { color: var(--green); }
+    .input { color: var(--warm); }
+    .cursor { color: var(--amber); }
+    .rail { position: absolute; left: 210px; right: 210px; top: 490px; display: flex; align-items: center; justify-content: space-between; }
+    .node { width: 360px; padding: 30px 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); text-align: center; font: 700 24px ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .node small { display: block; margin-top: 12px; color: var(--muted); font-size: 16px; font-weight: 400; }
+    .node.mid { border-color: var(--amber); color: var(--amber); }
+    .connector { height: 2px; width: 110px; background: var(--line); position: relative; }
+    .signal { position: absolute; width: 18px; height: 18px; border-radius: 50%; background: var(--amber); top: -8px; left: 0; box-shadow: 0 0 24px var(--amber); }
+    .schema { position: absolute; left: 310px; top: 180px; width: 1300px; padding: 34px 46px; background: rgba(23,35,45,.96); border: 1px solid var(--line); border-radius: 18px; font: 25px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .schema-title { color: var(--muted); font-size: 18px; letter-spacing: 3px; margin-bottom: 18px; }
+    .field { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(51,68,82,.55); }
+    .field:last-child { border: 0; }
+    .key { color: var(--muted); }.value { color: var(--green); }.value.amber { color: var(--amber); }
+    .stamp { position: absolute; left: 610px; top: 740px; border: 2px solid var(--green); color: var(--green); padding: 18px 30px; border-radius: 8px; font: 800 28px ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 3px; transform: rotate(-3deg); }
+    .check { position: absolute; left: 1300px; top: 730px; color: var(--green); font: 700 28px ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .footer { position: absolute; left: 110px; right: 110px; bottom: 68px; display: flex; justify-content: space-between; color: var(--muted); font: 18px ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 1px; }
+    .footer b { color: var(--green); font-weight: 400; }
+    .lockup { position: absolute; left: 110px; top: 300px; }
+    .lockup h1 { margin: 0; max-width: 1320px; font-size: 92px; line-height: 1.05; letter-spacing: -3px; }
+    .lockup p { margin-top: 34px; color: var(--green); font: 28px ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .lockup .brand { margin-top: 160px; color: var(--muted); font: 700 20px Arial, sans-serif; letter-spacing: 5px; }
+    .clip > * { will-change: transform, opacity; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-width="1920" data-height="1080" data-duration="20">
+    <div class="grain"></div><div class="orb"></div>
+    <section class="clip scene scene1" data-start="0" data-duration="3.2">
+      <div class="header">SWYNEX <span>/</span> SMART TASK PARSER</div><div class="kicker">MESSY INPUT.</div>
+      <div class="hero">One sentence.<br><em>Zero form-filling.</em></div><div class="sub">A natural-language task, ready to become actionable.</div>
+      <div class="terminal"><div class="termbar">smart-todo · task input</div><span class="prompt">&gt; </span><span class="input">Finish the budget report by next Tuesday</span><span class="cursor">▋</span></div>
+    </section>
+    <section class="clip scene scene2" data-start="3.2" data-duration="3.8">
+      <div class="header">THE TRANSLATION LAYER</div><div class="rail"><div class="node">NATURAL LANGUAGE<small>user task string</small></div><div class="connector"><div class="signal"></div></div><div class="node mid">GEMINI 2.5 FLASH<small>structured inference</small></div><div class="connector"><div class="signal"></div></div><div class="node">STRUCTURED TASK<small>ready for your app</small></div></div>
+      <div class="footer"><span>prompt + few-shot examples</span><span><b>schema-aware output</b></span></div>
+    </section>
+    <section class="clip scene scene3" data-start="7" data-duration="5">
+      <div class="header">THE RESULT, FIELD BY FIELD</div><div class="schema"><div class="schema-title">Task.model_json_schema() → validated object</div><div class="field"><span class="key">task_description</span><span class="value">"Finish the budget report"</span></div><div class="field"><span class="key">category</span><span class="value">"Work"</span></div><div class="field"><span class="key">priority</span><span class="value amber">"High"</span></div><div class="field"><span class="key">deadline</span><span class="value">"next Tuesday"</span></div><div class="field"><span class="key">confidence</span><span class="value">0.94</span></div><div class="field"><span class="key">is_ambiguous</span><span class="value">false</span></div></div>
+      <div class="footer"><span>no manual categorisation</span><span><b>plain JSON, strict shape</b></span></div>
+    </section>
+    <section class="clip scene scene4" data-start="12" data-duration="4">
+      <div class="header">TRUST THE SHAPE</div><div class="schema"><div class="schema-title">output checkpoint</div><div class="field"><span class="key">category</span><span class="value">"Work"</span></div><div class="field"><span class="key">priority</span><span class="value amber">"High"</span></div><div class="field"><span class="key">is_ambiguous</span><span class="value">false</span></div></div><div class="stamp">PYDANTIC VALIDATED</div><div class="check">✓ schema-enforced JSON</div><div class="footer"><span>ambiguity is explicit</span><span><b>ready to integrate</b></span></div>
+    </section>
+    <section class="clip scene scene5" data-start="16" data-duration="4">
+      <div class="lockup"><h1>Your to-do list just got a translator.</h1><p>natural language → actionable JSON</p><div class="brand">SWYNEX SMART TASK PARSER</div></div><div class="footer"><span>built for productivity applications</span><span><b>parse. validate. act.</b></span></div>
+    </section>
+  </div>
+  <audio id="music" src="assets/The_Steady_Climb.mp3" data-start="0" data-duration="20" data-volume="0.16"></audio>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('.scene1 .header', { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: .45, ease: 'power2.out' }, 0)
+      .fromTo('.scene1 .kicker', { x: -35, opacity: 0 }, { x: 0, opacity: 1, duration: .5, ease: 'power3.out' }, .2)
+      .fromTo('.scene1 .hero', { y: 35, opacity: 0 }, { y: 0, opacity: 1, duration: .75, ease: 'power3.out' }, .45)
+      .fromTo('.scene1 .sub', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: .5 }, .85)
+      .fromTo('.scene1 .terminal', { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: .7, ease: 'power3.out' }, .45)
+      .fromTo('.scene2 .header', { opacity: 0 }, { opacity: 1, duration: .35 }, 3.2)
+      .fromTo('.scene2 .node', { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: .55, stagger: .18, ease: 'power2.out' }, 3.45)
+      .fromTo('.scene2 .connector', { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: .4, transformOrigin: 'left center', stagger: .28 }, 3.7)
+      .fromTo('.scene2 .signal', { x: 0 }, { x: 92, duration: .85, ease: 'none', repeat: 1, repeatDelay: .2 }, 4.1)
+      .fromTo('.scene3 .header', { opacity: 0 }, { opacity: 1, duration: .35 }, 7)
+      .fromTo('.scene3 .schema', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: .6, ease: 'power3.out' }, 7.2)
+      .fromTo('.scene3 .field', { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: .35, stagger: .28 }, 7.75)
+      .fromTo('.scene4 .header', { opacity: 0 }, { opacity: 1, duration: .3 }, 12)
+      .fromTo('.scene4 .schema', { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: .5 }, 12.2)
+      .fromTo('.stamp', { scale: .75, opacity: 0, rotation: -8 }, { scale: 1, opacity: 1, rotation: -3, duration: .6, ease: 'back.out(1.6)' }, 13.25)
+      .fromTo('.check', { x: 20, opacity: 0 }, { x: 0, opacity: 1, duration: .45 }, 13.75)
+      .fromTo('.lockup h1', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .8, ease: 'power3.out' }, 16.25)
+      .fromTo('.lockup p', { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: .55 }, 17.05)
+      .fromTo('.lockup .brand', { opacity: 0 }, { opacity: 1, duration: .5 }, 17.55);
+    window.__timelines['main'] = tl;
+  </script>
+</body>
+</html>

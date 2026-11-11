@@ -1,0 +1,643 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 6,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<section class=\"scene\" data-start=\"0\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "D:\\SWYNEX-Internship\\smart-todo-categoriser\\brag-output-2026-11-04-120000\\composition\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<section class=\"scene\" data-start=\"3.2\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "D:\\SWYNEX-Internship\\smart-todo-categoriser\\brag-output-2026-11-04-120000\\composition\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<section class=\"scene\" data-start=\"7\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "D:\\SWYNEX-Internship\\smart-todo-categoriser\\brag-output-2026-11-04-120000\\composition\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<section class=\"scene\" data-start=\"12\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "D:\\SWYNEX-Internship\\smart-todo-categoriser\\brag-output-2026-11-04-120000\\composition\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<section class=\"scene\" data-start=\"16\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "D:\\SWYNEX-Internship\\smart-todo-categoriser\\brag-output-2026-11-04-120000\\composition\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "D:\\SWYNEX-Internship\\smart-todo-categoriser\\brag-output-2026-11-04-120000\\composition\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section> and its contents into a sub-composition file and mount it with data-composition-src."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "panel_out_of_canvas",
+        "severity": "warning",
+        "time": 1.111,
+        "selector": "div.orb",
+        "message": "Painted panel extends outside the composition canvas.",
+        "rect": {
+          "left": 1380,
+          "top": -240,
+          "right": 2100,
+          "bottom": 480,
+          "width": 720,
+          "height": 720
+        },
+        "containerSelector": "#root",
+        "text": "",
+        "fixHint": "Move the panel inward, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "right": 180,
+          "top": 240
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1380,
+          "y": -240,
+          "width": 720,
+          "height": 720
+        },
+        "firstSeen": 1.111,
+        "lastSeen": 18.889,
+        "occurrences": 9,
+        "heldMs": 0,
+        "times": [
+          1.111,
+          3.333,
+          5.556,
+          7.778,
+          10,
+          12.222,
+          14.444,
+          16.667,
+          18.889
+        ]
+      }
+    ],
+    "duration": 20,
+    "samples": [
+      1.111,
+      3.333,
+      5.556,
+      7.778,
+      10,
+      12.222,
+      14.444,
+      16.667,
+      18.889
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 1,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      1.111,
+      5.556,
+      10,
+      14.444,
+      18.889
+    ],
+    "checked": 52,
+    "passed": 52
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 2,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "first_frame_empty",
+        "severity": "warning",
+        "message": "Frame 0 shows only the background, and the first frame is the thumbnail on social players: have the title or key image already on screen at 0 s instead of entering from nothing; see references/review.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 43 text elements stay under it for 0.5 s or more, the smallest \"user task string\" at 16 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "user task string",
+        "selector": "div.rail > div:nth-of-type(1) > small:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 313.19,
+          "y": 573.62,
+          "width": 153.61,
+          "height": 21
+        },
+        "time": 3.625,
+        "times": [
+          0.125,
+          0.375,
+          0.625,
+          0.625,
+          1,
+          3.25,
+          3.25,
+          3.375,
+          3.625,
+          3.625,
+          3.875,
+          3.875,
+          4,
+          4,
+          7,
+          7,
+          7.25,
+          7.375,
+          7.875,
+          7.875,
+          8.25,
+          8.25,
+          8.5,
+          8.5,
+          8.75,
+          8.75,
+          9,
+          9,
+          9.375,
+          9.375,
+          12,
+          12,
+          12.125,
+          12.375,
+          12.375,
+          12.375,
+          12.375,
+          12.375,
+          12.375,
+          12.375,
+          16,
+          16,
+          17.75
+        ],
+        "fontPx": 16,
+        "floorPx": 28,
+        "seconds": 3.375,
+        "elements": [
+          {
+            "selector": "div.rail > div:nth-of-type(1) > small:nth-of-type(1)",
+            "text": "user task string",
+            "fontPx": 16,
+            "time": 3.625,
+            "seconds": 3.375
+          },
+          {
+            "selector": "div.node.mid > small:nth-of-type(1)",
+            "text": "structured inference",
+            "fontPx": 16,
+            "time": 3.875,
+            "seconds": 3.125
+          },
+          {
+            "selector": "div.rail > div:nth-of-type(5) > small:nth-of-type(1)",
+            "text": "ready for your app",
+            "fontPx": 16,
+            "time": 4,
+            "seconds": 3
+          },
+          {
+            "selector": "div.termbar",
+            "text": "smart-todo · task input",
+            "fontPx": 18,
+            "time": 0.625,
+            "seconds": 2.625
+          },
+          {
+            "selector": "[data-start=\"3.2\"] > div:nth-of-type(3) > span:nth-of-type(1)",
+            "text": "prompt + few-shot examples",
+            "fontPx": 18,
+            "time": 3.25,
+            "seconds": 3.75
+          },
+          {
+            "selector": "[data-start=\"3.2\"] > div:nth-of-type(3) > span:nth-of-type(2) > b:nth-of-type(1)",
+            "text": "schema-aware output",
+            "fontPx": 18,
+            "time": 3.25,
+            "seconds": 3.75
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(3) > span:nth-of-type(1)",
+            "text": "no manual categorisation",
+            "fontPx": 18,
+            "time": 7,
+            "seconds": 5
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(3) > span:nth-of-type(2) > b:nth-of-type(1)",
+            "text": "plain JSON, strict shape",
+            "fontPx": 18,
+            "time": 7,
+            "seconds": 5
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(2) > div:nth-of-type(1)",
+            "text": "Task.model_json_schema() → validated object",
+            "fontPx": 18,
+            "time": 7.375,
+            "seconds": 4.625
+          },
+          {
+            "selector": "[data-start=\"12\"] > div:nth-of-type(5) > span:nth-of-type(1)",
+            "text": "ambiguity is explicit",
+            "fontPx": 18,
+            "time": 12,
+            "seconds": 4
+          },
+          {
+            "selector": "[data-start=\"12\"] > div:nth-of-type(5) > span:nth-of-type(2) > b:nth-of-type(1)",
+            "text": "ready to integrate",
+            "fontPx": 18,
+            "time": 12,
+            "seconds": 4
+          },
+          {
+            "selector": "[data-start=\"12\"] > div:nth-of-type(2) > div:nth-of-type(1)",
+            "text": "output checkpoint",
+            "fontPx": 18,
+            "time": 12.375,
+            "seconds": 3.625
+          },
+          {
+            "selector": "[data-start=\"16\"] > div:nth-of-type(2) > span:nth-of-type(1)",
+            "text": "built for productivity applications",
+            "fontPx": 18,
+            "time": 16,
+            "seconds": 4
+          },
+          {
+            "selector": "[data-start=\"16\"] > div:nth-of-type(2) > span:nth-of-type(2) > b:nth-of-type(1)",
+            "text": "parse. validate. act.",
+            "fontPx": 18,
+            "time": 16,
+            "seconds": 4
+          },
+          {
+            "selector": "section[data-start=\"0\"] > div:nth-of-type(1)",
+            "text": "SWYNEX SMART TASK PARSER",
+            "fontPx": 20,
+            "time": 0.125,
+            "seconds": 3.125
+          },
+          {
+            "selector": "[data-start=\"3.2\"] > div:nth-of-type(1)",
+            "text": "THE TRANSLATION LAYER",
+            "fontPx": 20,
+            "time": 3.375,
+            "seconds": 3.625
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(1)",
+            "text": "THE RESULT, FIELD BY FIELD",
+            "fontPx": 20,
+            "time": 7.25,
+            "seconds": 4.75
+          },
+          {
+            "selector": "[data-start=\"12\"] > div:nth-of-type(1)",
+            "text": "TRUST THE SHAPE",
+            "fontPx": 20,
+            "time": 12.125,
+            "seconds": 3.875
+          },
+          {
+            "selector": "div.brand",
+            "text": "SWYNEX SMART TASK PARSER",
+            "fontPx": 20,
+            "time": 17.75,
+            "seconds": 2.25
+          },
+          {
+            "selector": "div.kicker",
+            "text": "MESSY INPUT.",
+            "fontPx": 22,
+            "time": 0.375,
+            "seconds": 2.875
+          },
+          {
+            "selector": "span.input",
+            "text": "Finish the budget report by next Tuesday",
+            "fontPx": 22,
+            "time": 0.625,
+            "seconds": 2.625
+          },
+          {
+            "selector": "div.rail > div:nth-of-type(1)",
+            "text": "NATURAL LANGUAGE",
+            "fontPx": 24,
+            "time": 3.625,
+            "seconds": 3.375
+          },
+          {
+            "selector": "div.node.mid",
+            "text": "GEMINI 2.5 FLASH",
+            "fontPx": 24,
+            "time": 3.875,
+            "seconds": 3.125
+          },
+          {
+            "selector": "div.rail > div:nth-of-type(5)",
+            "text": "STRUCTURED TASK",
+            "fontPx": 24,
+            "time": 4,
+            "seconds": 3
+          },
+          {
+            "selector": "div.sub",
+            "text": "A natural-language task, ready to become actionable.",
+            "fontPx": 25,
+            "time": 1,
+            "seconds": 2.25
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(1)",
+            "text": "task_description",
+            "fontPx": 25,
+            "time": 7.875,
+            "seconds": 4.125
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(2)",
+            "text": "\"Finish the budget report\"",
+            "fontPx": 25,
+            "time": 7.875,
+            "seconds": 4.125
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(2) > div:nth-of-type(3) > span:nth-of-type(1)",
+            "text": "category",
+            "fontPx": 25,
+            "time": 8.25,
+            "seconds": 3.75
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(2) > div:nth-of-type(3) > span:nth-of-type(2)",
+            "text": "\"Work\"",
+            "fontPx": 25,
+            "time": 8.25,
+            "seconds": 3.75
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(2) > div:nth-of-type(4) > span:nth-of-type(1)",
+            "text": "priority",
+            "fontPx": 25,
+            "time": 8.5,
+            "seconds": 3.5
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(2) > div:nth-of-type(4) > span:nth-of-type(2)",
+            "text": "\"High\"",
+            "fontPx": 25,
+            "time": 8.5,
+            "seconds": 3.5
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(2) > div:nth-of-type(5) > span:nth-of-type(1)",
+            "text": "deadline",
+            "fontPx": 25,
+            "time": 8.75,
+            "seconds": 3.25
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(2) > div:nth-of-type(5) > span:nth-of-type(2)",
+            "text": "\"next Tuesday\"",
+            "fontPx": 25,
+            "time": 8.75,
+            "seconds": 3.25
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(2) > div:nth-of-type(6) > span:nth-of-type(1)",
+            "text": "confidence",
+            "fontPx": 25,
+            "time": 9,
+            "seconds": 3
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(2) > div:nth-of-type(6) > span:nth-of-type(2)",
+            "text": "0.94",
+            "fontPx": 25,
+            "time": 9,
+            "seconds": 3
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(2) > div:nth-of-type(7) > span:nth-of-type(1)",
+            "text": "is_ambiguous",
+            "fontPx": 25,
+            "time": 9.375,
+            "seconds": 2.625
+          },
+          {
+            "selector": "[data-start=\"7\"] > div:nth-of-type(2) > div:nth-of-type(7) > span:nth-of-type(2)",
+            "text": "false",
+            "fontPx": 25,
+            "time": 9.375,
+            "seconds": 2.625
+          },
+          {
+            "selector": "[data-start=\"12\"] > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(1)",
+            "text": "category",
+            "fontPx": 25,
+            "time": 12.375,
+            "seconds": 3.625
+          },
+          {
+            "selector": "[data-start=\"12\"] > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(2)",
+            "text": "\"Work\"",
+            "fontPx": 25,
+            "time": 12.375,
+            "seconds": 3.625
+          },
+          {
+            "selector": "[data-start=\"12\"] > div:nth-of-type(2) > div:nth-of-type(3) > span:nth-of-type(1)",
+            "text": "priority",
+            "fontPx": 25,
+            "time": 12.375,
+            "seconds": 3.625
+          },
+          {
+            "selector": "[data-start=\"12\"] > div:nth-of-type(2) > div:nth-of-type(3) > span:nth-of-type(2)",
+            "text": "\"High\"",
+            "fontPx": 25,
+            "time": 12.375,
+            "seconds": 3.625
+          },
+          {
+            "selector": "[data-start=\"12\"] > div:nth-of-type(2) > div:nth-of-type(4) > span:nth-of-type(1)",
+            "text": "is_ambiguous",
+            "fontPx": 25,
+            "time": 12.375,
+            "seconds": 3.625
+          },
+          {
+            "selector": "[data-start=\"12\"] > div:nth-of-type(2) > div:nth-of-type(4) > span:nth-of-type(2)",
+            "text": "false",
+            "fontPx": 25,
+            "time": 12.375,
+            "seconds": 3.625
+          }
+        ]
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 160
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": true,
+    "files": [
+      ".hyperframes\\artifacts\\snapshots\\5024d1a2-598e-46fe-ab9b-4c0d125c4f13\\frame-00-at-1.1s.png",
+      ".hyperframes\\artifacts\\snapshots\\5024d1a2-598e-46fe-ab9b-4c0d125c4f13\\frame-01-at-5.6s.png",
+      ".hyperframes\\artifacts\\snapshots\\5024d1a2-598e-46fe-ab9b-4c0d125c4f13\\frame-02-at-10.0s.png",
+      ".hyperframes\\artifacts\\snapshots\\5024d1a2-598e-46fe-ab9b-4c0d125c4f13\\frame-03-at-14.4s.png",
+      ".hyperframes\\artifacts\\snapshots\\5024d1a2-598e-46fe-ab9b-4c0d125c4f13\\frame-04-at-18.9s.png"
+    ],
+    "times": [
+      1.111,
+      5.556,
+      10,
+      14.444,
+      18.889
+    ],
+    "findingFiles": []
+  }
+}
