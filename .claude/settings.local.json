@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(python cli.py \"Schedule dentist appointment\" --dry-run)",
-      "Bash(echo \"exit: $?\")"
-    ]
-  }
-}
